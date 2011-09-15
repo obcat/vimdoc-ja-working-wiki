@@ -2,5 +2,5 @@
 ========
 
   * [[翻訳成果を利用したい人へ|HowToUse ]]
-  * [HowToContribute 翻訳に参加したい人へ]
-  * [OtherResources 翻訳関連のリソース]
+  * [[翻訳に参加したい人へ|HowToContribute]]
+  * [[翻訳関連のリソース|OtherResources]]
