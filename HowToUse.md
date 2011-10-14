@@ -4,8 +4,7 @@
 ダウンロード
 ------------
 
-  * [[暫定リリース版|http://vimdoc-ja.googlecode.com/files/vimdoc_ja-20110212-r335.zip]](ZIP, 2011/02/12, r335)
-  * [[スナップショット|http://www1.kaoriya.net/vimdoc_j/vimdoc_ja-snapshot.tar.bz2]](tar.bz2, 毎日7時頃自動更新)
+  * スナップショット [[zip|https://github.com/vim-jp/vimdoc-ja/zipball/master]] [[tar|https://github.com/vim-jp/vimdoc-ja/tarball/master]] (ファイル名はgitのハッシュ値が含まれるので不定です: vim-jp-vimdoc-ja-xxxxxxx.zip)
   * リポジトリのデータを直接使う (後述)
 
 インストール方法
@@ -15,24 +14,18 @@
 
 > 各OSで利用できる解凍ソフトを利用してください。例えば Unix 系 OS なら以下のようになります。
 
-    tar jxvf ./vimdoc_ja-snapshot.tar.bz2
+    tar zxvf ./vim-jp-vimdoc-ja-xxxxxxx.tar.gz
 
-- 展開するとruntimeディレクトリされるので、これを 'runtimepath' が通った場所へ配置します。
+- 展開されたファイルを 'runtimepath' が通った場所へ配置します。
 
 > Windowsなら、~/vimfiles/ 以下に runtime の中身をコピーします。
 >> ~/ はホームディレクトリで、Windows XP なら `C:\Documents and Settings\{ユーザ名}`、Vista や 7 なら `C:\Users\{ユーザ名}` になります。
 >Unix 系の OS なら、~/.vim/ 以下に runtime の中身をコピーします。
 >もしくは、展開した場所を 'runtimepath' に追加する方法もあります。
 
-    :set runtimepath+=/path/to/runtime
+    :set runtimepath+=/path/to/vim-jp-vimdoc-ja-xxxxxxx
 
-- tags を生成します。Vimを起動し、以下のようなコマンドを実行します。
-
-    :helptags ~/.vim/doc
-
-> `~/.vim/doc` は、runtime を配置した場所の中の doc ディレクトリを指定します。
-
-- 日本語 help の優先順位をあげます。vimrc に以下を追記します。
+- 日本語 help の優先順位をあげます。vimrc に以下を追記します (OSの言語設定が日本語になっているなら不要)。
 
     :set helplang=ja,en
 
