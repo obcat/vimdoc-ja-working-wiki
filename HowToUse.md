@@ -56,4 +56,4 @@ bundle ディレクトリの位置を変えている場合は適時読みかえ�
 HTMLでみたい人へ
 ----------------
 
-  * [[http://sites.google.com/site/vimdocja/]]
+  * [[http://vim-jp.org/vimdoc-ja/]]
