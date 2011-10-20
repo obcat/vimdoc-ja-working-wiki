@@ -4,20 +4,20 @@
 ## 作業の流れ
 
 1. vimdoc-ja リポジトリをクローンする。
-2. devel ブランチの en ディレクトリの原文ファイルを更新する。 (.jaxのみ更新する場合は不要)。
-3. master ブランチの doc ディレクトリの .jax ファイルを更新する。
-4. gh-pages を更新する。
+2. 原文ファイルを更新する。
+3. 翻訳ファイルを更新する。
+4. Web サイトを更新する。
 5. 変更を push する。
 
 ## ブランチの説明
 
 * `master`: ランタイムファイル。翻訳ファイルやシンタックスファイルなど。`:set runtimepath+=/path/to/vimdoc-ja/master` としてそのまま使える形。
 * `devel`: 作業用のファイル。原文ファイルや html 生成スクリプトなど。その他、ランタイムファイル以外のもの。
-* `gh-pages`: http://vim-jp.org/vimdoc-ja/ の html。ここのコミットするとサーバー上のファイルが更新される。
+* `gh-pages`: http://vim-jp.org/vimdoc-ja/ の html。ここにコミットするとサーバー上のファイルが更新される。
 
-## 具体例
+## 例
 
-vimdoc-ja リポジトリをクローンする。
+### vimdoc-ja リポジトリをクローンする。
 
 ```sh
 $ git clone git@github.com:vim-jp/vimdoc-ja.git
@@ -31,7 +31,7 @@ $ git branch -t devel origin/devel
 $ git branch -t gh-pages origin/gh-pages
 ```
 
-原文ファイルを更新する。
+### 原文ファイルを更新する。
 
 ```sh
 $ git checkout devel
@@ -39,13 +39,13 @@ $ cp /path/to/vim/runtime/doc/foo.txt en/foo.txt
 $ git commit -a -m "..."
 ```
 
-原文の差分を見つつ作業します。
+原文の差分を見つつ翻訳ファイルを更新していきます。
 
 ```sh
 $ git diff devel~2..devel~1 | gvim -
 ```
 
-翻訳ファイルを更新する。
+### 翻訳ファイルを更新する。
 
 ```sh
 $ git checkout master
@@ -53,24 +53,29 @@ $ vim doc/foo.jax
 $ git commit -a -m "..."
 ```
 
-gh-pages 用の html を生成する。
+### Web サイトを更新する。
+
+翻訳ファイルから html を生成します。
 
 ```sh
 $ git checkout devel
 $ vim -u tools/buildhtml.vim
 ```
 
-生成された html を確認して問題なければ pull します。
+`git clone . html` によってリポジトリがクローンされ、その中で html ファイルが生成されます。
+
+生成された html ファイルを確認して問題なければ取り込みます。
 
 ```sh
 $ cd html
 $ git diff HEAD^ | gvim -
+$ git push ..
 $ cd ..
-$ git checkout gh-pages
-$ git pull html gh-pages
 ```
 
-最後、remote に push して完了。
+### 変更を push する。
+
+remote に push して完了です。
 
 ```sh
 $ git push
