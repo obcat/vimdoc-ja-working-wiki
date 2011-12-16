@@ -48,9 +48,18 @@
 
 bundle ディレクトリの位置を変えている場合は適時読みかえてください。更新は `git pull` で可能です。
 
+リポジトリのデータをすべて取得するのはディスク容量が気になるという方は `--depth 1` を指定してください。履歴がダウンロードされなくなります。
+
+    git clone --depth 1 https://github.com/vim-jp/vimdoc-ja.git ~/.vim/bundle/vimdoc-ja
+
+Subversion で取得することもできます。
+
+    svn checkout https://github.com/vim-jp/vimdoc-ja/trunk ~/.vim/bundle/vimdoc-ja
+
 プラグインなどを使わずに手動でリポジトリを使う場合はリポジトリをチェックアウトまたは更新した後に :helptags コマンドを使ってタグファイルを更新してください。
 
     :helptags /path/to/vimdoc-ja/doc
+
 
 HTMLでみたい人へ
 ----------------
