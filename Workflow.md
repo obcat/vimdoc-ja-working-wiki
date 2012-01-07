@@ -33,6 +33,21 @@ $ git branch -t gh-pages origin/gh-pages
 
 ### 原文ファイルを更新する。
 
+Vim のソースは http://code.google.com/p/vim/ から取得できます。ソースの取得には hg を使います。
+
+```sh
+$ hg clone https://code.google.com/p/vim/
+```
+
+クローン済みのリポジトリを最新に更新するには `hg pull` を実効します。
+
+```sh
+$ cd /path/to/vim
+$ hg pull --update
+```
+
+更新したい原文ファイルを vimdoc-ja の devel ブランチにコピーします。
+
 ```sh
 $ git checkout devel
 $ cp /path/to/vim/runtime/doc/foo.txt en/foo.txt
