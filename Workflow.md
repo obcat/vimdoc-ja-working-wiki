@@ -39,7 +39,7 @@ Vim のソースは http://code.google.com/p/vim/ から取得できます。ソ
 $ hg clone https://code.google.com/p/vim/
 ```
 
-クローン済みのリポジトリを最新に更新するには `hg pull` を実効します。
+クローン済みのリポジトリを最新に更新するには `hg pull` を実行します。
 
 ```sh
 $ cd /path/to/vim
