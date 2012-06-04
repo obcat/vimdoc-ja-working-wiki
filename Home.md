@@ -5,3 +5,4 @@
   * [[翻訳に参加したい人へ|HowToContribute]]
   * [[翻訳関連のリソース|OtherResources]]
   * [[作業手順|Workflow]]
+  * [[Vim ドキュメント翻訳者の手引き|Guide]]
