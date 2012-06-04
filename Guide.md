@@ -224,3 +224,10 @@ Pythonドキュメント翻訳プロジェクト
 
 仁平和夫(にひら かずお)『翻訳のコツ』
   http://homepage3.nifty.com/hon-yaku/tsushin/bn/200209SAp2.pdf
+
+
+ツール
+-----
+
+ExciteTranslate
+  https://github.com/mattn/excitetranslate-vim
