@@ -52,6 +52,10 @@ bundle ディレクトリの位置を変えている場合は適宜読みかえ�
 
     git clone --depth 1 https://github.com/vim-jp/vimdoc-ja.git ~/.vim/bundle/vimdoc-ja
 
+また Git 1.7.10 以降を使用している場合は、`--single-branch` オプションを使うことで html 版を含むブランチがダウンロードされなくなります。
+
+    git clone --depth 1 --single-branch https://github.com/vim-jp/vimdoc-ja.git ~/.vim/bundle/vimdoc-ja
+
 Subversion で取得することもできます。
 
     svn checkout https://github.com/vim-jp/vimdoc-ja/trunk ~/.vim/bundle/vimdoc-ja
