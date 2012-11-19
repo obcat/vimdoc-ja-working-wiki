@@ -39,7 +39,7 @@
 リポジトリのデータを直接使う場合
 --------------------------------
 
-[[pathogen.vim|https://github.com/tpope/vim-pathogen]]、[[rtputil.vim|https://github.com/thinca/vim-rtputil]]、[[Vundle|https://github.com/gmarik/vundle]] などを使っている場合は、リポジトリのデータを直接利用することができます。
+[[pathogen.vim|https://github.com/tpope/vim-pathogen]]、[[rtputil.vim|https://github.com/thinca/vim-rtputil]]、[[Vundle|https://github.com/gmarik/vundle]] などを使っている場合は、リポジトリのデータを直接利用できます。
 この場合、リポジトリ最新のデータに簡単に追従できる利点があります。
 
 以下のようにして、各々の bundle ディレクトリにリポジトリの runtime ディレクトリをチェックアウトしてください。
@@ -56,7 +56,7 @@ bundle ディレクトリの位置を変えている場合は適宜読みかえ�
 
     git clone --depth 1 --single-branch https://github.com/vim-jp/vimdoc-ja.git ~/.vim/bundle/vimdoc-ja
 
-Subversion で取得することもできます。
+Subversion でも取得できます。
 
     svn checkout https://github.com/vim-jp/vimdoc-ja/trunk ~/.vim/bundle/vimdoc-ja
 
