@@ -4,7 +4,7 @@
 ダウンロード
 ------------
 
-  * スナップショット [[zip|https://github.com/downloads/vim-jp/vimdoc-ja/vimdoc-ja.zip]] | [[tar|https://github.com/downloads/vim-jp/vimdoc-ja/vimdoc-ja.tar.gz]]
+  * スナップショット [[zip|https://github.com/vim-jp/vimdoc-ja/archive/master.zip]] | [[tar|https://github.com/vim-jp/vimdoc-ja/archive/master.tar.gz]]
   * リポジトリのデータを直接使う (後述)
 
 インストール方法
