@@ -13,7 +13,7 @@
 
 * `master`: ランタイムファイル。翻訳ファイルやシンタックスファイルなど。`:set runtimepath+=/path/to/vimdoc-ja/master` としてそのまま使える形。
 * `devel`: 作業用のファイル。原文ファイルや html 生成スクリプトなど。その他、ランタイムファイル以外のもの。
-* `gh-pages`: http://vim-jp.org/vimdoc-ja/ の html。ここにコミットするとサーバー上のファイルが更新される。
+* `gh-pages`: http://vim-jp.org/vimdoc-ja/ の html。ここにコミットするとサーバー上のファイルが更新される。(自動更新)
 
 ## 例
 
