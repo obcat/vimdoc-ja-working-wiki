@@ -25,6 +25,12 @@
 
     :set runtimepath+=/path/to/vimdoc-ja
 
+- `:helptags` コマンドを使ってタグファイルを生成します。
+
+>
+
+    :helptags /path/to/vimdoc-ja/doc
+
 :help コマンドを実行して日本語ヘルプが表示されればインストールは成功です。
 
 - :help コマンドで英語のヘルプが表示される場合は日本語の優先順位をあげてください。vimrc に以下を追記します。
