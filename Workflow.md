@@ -1,39 +1,39 @@
-作業手順
-========
+# 作業手順
 
 ## 作業の流れ
 
-1. vimdoc-ja リポジトリをクローンする。
-2. 原文ファイルを更新する。
-3. 翻訳ファイルを更新する。
-4. Web サイトを更新する。
-5. 変更を push する。
+1.  作業用ブランチを取り出す (vimdoc-ja リポジトリをクローンする)
+2.  原文ファイルを更新する
+3.  翻訳ファイルを更新する
+4.  Web サイトを更新する
+5.  変更を push する
 
 ## ブランチの説明
 
-* `master`: ランタイムファイル。翻訳ファイルやシンタックスファイルなど。`:set runtimepath+=/path/to/vimdoc-ja/master` としてそのまま使える形。
-* `devel`: 作業用のファイル。原文ファイルや html 生成スクリプトなど。その他、ランタイムファイル以外のもの。
-* `gh-pages`: http://vim-jp.org/vimdoc-ja/ の html。ここにコミットするとサーバー上のファイルが更新される。(自動更新)
+*   `devel`: 作業用のブランチ。
+    原文、翻訳文、HTML 生成スクリプトなどのファイルが格納されている。
+    通常はこのブランチのみで作業する
+*   `master`: 配布用のブランチ。 
+    **devel ブランチを更新すると自動で更新されるので通常は作業しない。**
+    翻訳ファイルやシンタックスファイルなど。
+    `:set runtimepath+=/path/to/vimdoc-ja/master` として使える形を維持する
+*   `gh-pages`: HTML公開用のブランチ。 
+    **devel ブランチを更新すると自動で更新されるので通常は作業しない。**
+    http://vim-jp.org/vimdoc-ja/ の HTMLが格納される
 
-## 例
-
-### vimdoc-ja リポジトリをクローンする。
-
-```sh
-$ git clone git@github.com:vim-jp/vimdoc-ja.git
-$ cd vimdoc-ja
-```
-
-あとで html を生成するときに `master` `devel` `gh-pages` ブランチが必要なので作っておきます。
+## 作業用ブランチを取り出す
 
 ```sh
-$ git branch -t devel origin/devel
-$ git branch -t gh-pages origin/gh-pages
+$ git clone -b devel git@github.com:vim-jp/vimdoc-ja.git
 ```
 
-### 原文ファイルを更新する。
+vimdoc-ja ディレクトリに作業用ブランチが取得できます。
 
-Vim のソースは http://code.google.com/p/vim/ から取得できます。ソースの取得には hg を使います。
+## 原文ファイルを更新する
+
+最新の原文ファイルを取得し、develブランチを更新します。
+Vim のソースは http://code.google.com/p/vim/ から取得できます。
+ソースの取得には hg を使います。
 
 ```sh
 $ hg clone https://code.google.com/p/vim/
@@ -46,10 +46,10 @@ $ cd /path/to/vim
 $ hg pull --update
 ```
 
-更新したい原文ファイルを vimdoc-ja の devel ブランチにコピーします。
+更新したい原文ファイルを vimdoc-ja にコピーします。
 
 ```sh
-$ git checkout devel
+$ cd /path/to/vimdoc-ja
 $ cp /path/to/vim/runtime/doc/foo.txt en/foo.txt
 $ git commit -a -m "..."
 ```
@@ -60,39 +60,21 @@ $ git commit -a -m "..."
 $ git diff devel~2..devel~1 | gvim -
 ```
 
-### 翻訳ファイルを更新する。
+## 翻訳ファイルを更新する
 
 ```sh
-$ git checkout master
+$ cd /path/to/vimdoc-ja
 $ vim doc/foo.jax
 $ git commit -a -m "..."
 ```
 
-### Web サイトを更新する。
+## 変更を push する
 
-翻訳ファイルから html を生成します。
-
-```sh
-$ git checkout devel
-$ vim -u tools/buildhtml.vim
-```
-
-`git clone . html` によってリポジトリがクローンされ、その中で html ファイルが生成されます。
-
-生成された html ファイルを確認して問題なければ取り込みます。
-
-```sh
-$ cd html
-$ git diff HEAD^ | gvim -
-$ git push ..
-$ cd ..
-```
-
-### 変更を push する。
-
-remote に push して完了です。
+リモートの devel ブランチへ push して完了です。
 
 ```sh
 $ git push
 ```
 
+しばらく(最大20分程度)すると master と gh-pages ブランチが自動的に更新され、
+あなたの翻訳が公開されます。
