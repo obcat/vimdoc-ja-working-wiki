@@ -129,6 +129,8 @@ Vim ドキュメント翻訳者の手引き
 - map → マップ
 - abbreviation → 短縮入力
 - user defined command, user command → ユーザーコマンド
+- forward/backward → 前方/後方 固定とする。
+- before/after → 前/後ろ (前方/後方 と訳さない)
 
 - モードの名称
 ```
