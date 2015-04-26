@@ -151,7 +151,6 @@ Insert mode                     挿入モード
 Command-line mode               コマンドラインモード
 Ex mode                         Exモード
 ```
-Operator-pending mode は、「移動コマンド待ちモード」がよい？
 
 意見
 ------
