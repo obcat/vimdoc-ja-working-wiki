@@ -144,7 +144,7 @@ Select mode                     選択モード
         characterwise ～        文字選択モード          （あるいは、文字単位～）
         linewise ～             行選択モード            （あるいは、行単位～）
         blockwise ～            矩形選択モード
-Operator-pending mode           
+Operator-pending mode           オペレータ待機モード
 Insert mode                     挿入モード
     Replace mode                置換モード
     Virtual Replace mode        仮想置換モード
