@@ -5,7 +5,7 @@
 1.  作業用ブランチを取り出す (vimdoc-ja リポジトリをクローンする)
 2.  原文ファイルを更新する
 3.  翻訳ファイルを更新する
-4.  Web サイトを更新する
+4.  (Web サイトを更新する)
 5.  変更を push する
 
 ## ブランチの説明
@@ -32,18 +32,18 @@ vimdoc-ja ディレクトリに作業用ブランチが取得できます。
 ## 原文ファイルを更新する
 
 最新の原文ファイルを取得し、develブランチを更新します。
-Vim のソースは http://code.google.com/p/vim/ から取得できます。
-ソースの取得には hg を使います。
+Vim のソースは https://github.com/vim/vim から取得できます。
+ソースの取得には git を使います。
 
 ```sh
-$ hg clone https://code.google.com/p/vim/
+$ git clone https://github.com/vim/vim.git
 ```
 
-クローン済みのリポジトリを最新に更新するには `hg pull` を実行します。
+クローン済みのリポジトリを最新に更新するには `git pull` を実行します。
 
 ```sh
 $ cd /path/to/vim
-$ hg pull --update
+$ git pull
 ```
 
 更新したい原文ファイルを vimdoc-ja にコピーします。
