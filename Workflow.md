@@ -1,80 +1,90 @@
 # 作業手順
 
+
 ## 作業の流れ
 
-1.  作業用ブランチを取り出す (vimdoc-ja リポジトリをクローンする)
-2.  原文ファイルを更新する
-3.  翻訳ファイルを更新する
-4.  (Web サイトを更新する)
-5.  変更を push する
+1.  本リポジトリをクローンする
+2.  master から作業ブランチを作成する
+3.  原文ファイルを更新する (vim/vim からコピーする)
+4.  翻訳ファイルを翻訳・更新する
+5.  作業ブランチを push して Pull Request (PR)を作成する
+    *   原文ファイルの更新と翻訳ファイルの更新が1つのPRに入るようにする
+    *   表記の統一をした場合はdict.ymlの更新も一緒に行う
 
-## ブランチの説明
 
-*   `devel`: 作業用のブランチ。
-    原文、翻訳文、HTML 生成スクリプトなどのファイルが格納されている。
-    通常はこのブランチのみで作業する
-*   `master`: 配布用のブランチ。 
-    **devel ブランチを更新すると自動で更新されるので通常は作業しない。**
-    翻訳ファイルやシンタックスファイルなど。
-    `:set runtimepath+=/path/to/vimdoc-ja/master` として使える形を維持する
-*   `gh-pages`: HTML公開用のブランチ。 
-    **devel ブランチを更新すると自動で更新されるので通常は作業しない。**
-    http://vim-jp.org/vimdoc-ja/ の HTMLが格納される
+##  本リポジトリをクローンする
 
-## 作業用ブランチを取り出す
+以下の手順で、本リポジトリをクローンできます。
 
-```sh
-$ git clone -b devel git@github.com:vim-jp/vimdoc-ja.git
-```
+    $ cd /path/to
+    $ git clone git@github.com:vim-jp/vimdoc-ja-working.git
 
-vimdoc-ja ディレクトリに作業用ブランチが取得できます。
+
+## master から作業ブランチを作成する
+
+以下の手順で master から作業ブランチを作成できます。
+
+    $ cd /path/to/vimdoc-ja-working
+    $ git checkout master
+    $ git pull
+    $ git checkout -b my-translation
+
+`my-translation` は、適切なブランチ名を付けて、置き換えてください。
+
 
 ## 原文ファイルを更新する
 
-最新の原文ファイルを取得し、develブランチを更新します。
+最新の原文ファイルを取得し、作業ブランチを更新します。
 Vim のソースは https://github.com/vim/vim から取得できます。
 ソースの取得には git を使います。
 
-```sh
-$ git clone https://github.com/vim/vim.git
-```
+    $ cd /path/to
+    $ git clone https://github.com/vim/vim.git
 
 クローン済みのリポジトリを最新に更新するには `git pull` を実行します。
 
-```sh
-$ cd /path/to/vim
-$ git pull
-```
+    $ cd /path/to/vim
+    $ git pull
 
-更新したい原文ファイルを vimdoc-ja にコピーします。
+更新したい原文ファイル (以下の例では foo.txt としてます) を vimdoc-ja-working にコピーします。
 
-```sh
-$ cd /path/to/vimdoc-ja
-$ cp /path/to/vim/runtime/doc/foo.txt en/foo.txt
-$ git commit -a -m "..."
-```
+    $ cd /path/to/vimdoc-ja-working
+    $ cp /path/to/vim/runtime/doc/foo.txt en/foo.txt
 
 原文の差分を見つつ翻訳ファイルを更新していきます。
 
-```sh
-$ git diff devel~2..devel~1 | gvim -
-```
+    $ git diff -- en
 
-## 翻訳ファイルを更新する
+原文の変更を予めコミットしてから翻訳作業をしても良いです。
 
-```sh
-$ cd /path/to/vimdoc-ja
-$ vim doc/foo.jax
-$ git commit -a -m "..."
-```
+    $ git commit -a -m "update original doc..."
+    $ git diff HEAD^2...HEAD^1 -- en
+    $ git diff master...HEAD -- en
 
-## 変更を push する
 
-リモートの devel ブランチへ push して完了です。
+## 翻訳ファイルを翻訳・更新する
 
-```sh
-$ git push
-```
+特に説明することはありません。
+以下の手順を参考にしてください。
 
-しばらく(最大20分程度)すると master と gh-pages ブランチが自動的に更新され、
-あなたの翻訳が公開されます。
+    $ cd /path/to/vimdoc-ja-working
+    $ vim doc/foo.jax
+    $ git commit -a -m "..."
+
+翻訳をこまめにコミットしても良いです。
+
+
+## 作業ブランチを push して Pull Request (PR)を作成する
+
+作業ブランチを push して PR を作成したら、作業完了です。
+レビューを受け、修正しつつマージを待ちましょう。
+
+    $ git push -u origin my-translation
+
+master へマージされると、通常は5分くらいで vimdoc-ja の Web と配布用ファイルへ反映されます。
+
+
+## vimdoc-ja-working へのコミット件がない場合
+
+github での通常の作法と同様に、フォークした後、上記の要領で作業を行い、
+フォーク先のレポジトリへコミット&プッシュした後、PRを作成してください。
