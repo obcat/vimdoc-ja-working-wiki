@@ -84,7 +84,7 @@ Vim のソースは https://github.com/vim/vim から取得できます。
 master へマージされると、通常は5分くらいで vimdoc-ja の Web と配布用ファイルへ反映されます。
 
 
-## vimdoc-ja-working へのコミット件がない場合
+## vimdoc-ja-working へのコミット権がない場合
 
 github での通常の作法と同様に、フォークした後、上記の要領で作業を行い、
 フォーク先のレポジトリへコミット&プッシュした後、PRを作成してください。
