@@ -25,7 +25,7 @@ Vim ドキュメント翻訳者の手引き
 
 - 1行は78カラム以内  
   [autofmt](http://www.vim.org/scripts/script.php?script_id=1939)を入れてgqを使うとそのように整形できる。(kaoriya版には同梱)  
-  (あるいは、[JpFormat.vim](https://sites.google.com/site/fudist/Home/jpformat))
+  (あるいは、[JpFormat.vim](https://sites.google.com/site/fudist/Home/jpformat))  
   はみ出た部分の色を変えるのもよい。
 ```vim
     :syn match Error /\%>79v.*/
