@@ -21,12 +21,15 @@ Vim ドキュメント翻訳者の手引き
   これらはサンプルを示すsyntax hightlightをかけるためのキーワードになっている。helpIgnoreグループになっているので、見落とさないように色を変えておいた方がよい。
 ```vim
     :hi Ignore ctermfg=red
-    :syn match Error /\%>79v.*/
 ```
 
 - 1行は78カラム以内  
   [autofmt](http://www.vim.org/scripts/script.php?script_id=1939)を入れてgqを使うとそのように整形できる。(kaoriya版には同梱)  
   (あるいは、[JpFormat.vim](https://sites.google.com/site/fudist/Home/jpformat))
+  はみ出た部分の色を変えるのもよい。
+```vim
+    :syn match Error /\%>79v.*/
+```
 
 - 口調  
   ユーザーマニュアルは「です、ます」調に統一する。  
