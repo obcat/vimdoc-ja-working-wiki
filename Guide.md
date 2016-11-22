@@ -19,17 +19,22 @@ Vim ドキュメント翻訳者の手引き
 
 - 行末の `␣>` (`␣`は半角空白) 及び行頭の `<`  
   これらはサンプルを示すsyntax hightlightをかけるためのキーワードになっている。helpIgnoreグループになっているので、見落とさないように色を変えておいた方がよい。
-```vim
-    :hi Ignore ctermfg=red
-```
+  ```vim
+  :hi Ignore ctermfg=red
+  ```
 
 - 1行は78カラム以内  
   [autofmt](http://www.vim.org/scripts/script.php?script_id=1939)を入れてgqを使うとそのように整形できる。(kaoriya版には同梱)  
-  (あるいは、[JpFormat.vim](https://sites.google.com/site/fudist/Home/jpformat))  
+  (あるいは、[JpFormat.vim](https://sites.google.com/site/fudist/Home/jpformat))
+  ```vim
+  " autofmtの設定例
+  :set formatexpr=autofmt#japanese#formatexpr()  " kaoriya版では設定済み
+  ：let autofmt_allow_over_tw=1　　　　　　　　　　　　　　　　　" 全角文字がぶら下がりで1カラムはみ出すのを許可
+  ```
   はみ出た部分の色を変えるのもよい。
-```vim
-    :syn match Error /\%>79v.*/
-```
+  ```vim
+  :syn match Error /\%>79v.*/
+  ```
 
 - 口調  
   ユーザーマニュアルは「です、ます」調に統一する。  
@@ -44,20 +49,20 @@ Vim ドキュメント翻訳者の手引き
   補足の場合は、`{訳注: 補足}` の形式にする。(構文強調される予定)
 
   行単位で書くと小細工できて都合がいい
-```
-訳注メモ: こんな感じでリリースに含めないようなメモを書く  
-訳注メモ: 作業ログ、疑問、注意点など、他の翻訳者が後で参照できるようにする  
-訳注メモ: リリースに含めないと利用者からのフィードバックを得られないか?  
-訳注メモ: 消さないほうが利用者にとって分かりやすいか?  
-訳注メモ: 名前も入れておくと分かりやすい?
-```
+  ```
+  訳注メモ: こんな感じでリリースに含めないようなメモを書く  
+  訳注メモ: 作業ログ、疑問、注意点など、他の翻訳者が後で参照できるようにする  
+  訳注メモ: リリースに含めないと利用者からのフィードバックを得られないか?  
+  訳注メモ: 消さないほうが利用者にとって分かりやすいか?  
+  訳注メモ: 名前も入れておくと分かりやすい?
+  ```
 
 - ファイル形式  
   文字コードは UTF-8  
   改行文字は UNIX 形式(`\n`)
-```vim
+  ```vim
   :set fileencoding=utf-8 fileformat=unix
-```
+  ```
 
   ファイルによっては cp932 などでは扱えない文字を含んでいるので、`:set encoding=utf-8` もしておいた方がよいと思われる。  
 
