@@ -15,13 +15,15 @@ Vim ドキュメント翻訳者の手引き
   ただ、空白を入れないほうが書きやすいし読みやすいと感じる  
   ファイル名やコマンド、コード片などは空白で区切った方が分かりやすいのでは？
 
-  "～" や '～' のように引用符でくくられている部分は、くくられている部分を明確にするため、前後に空白を入れる。
+  "～"、'～'、\`～\` のように引用符でくくられている部分は、くくられている部分を明確にするため、前後に空白を入れる。  
+  ただし、英数字同様に句読点の前後は空白なし。|～| によるリンクも同様。
 
 - 行末の `␣>` (`␣`は半角空白) 及び行頭の `<`  
   これらはサンプルを示すsyntax hightlightをかけるためのキーワードになっている。helpIgnoreグループになっているので、見落とさないように色を変えておいた方がよい。
   ```vim
   :hi Ignore ctermfg=red
   ```
+  サンプル直後の本文が `<` で始まる場合は、語順を変えるか `<` を2重にして非表示にされないようにする。
 
 - 1行は78カラム以内  
   [autofmt](http://www.vim.org/scripts/script.php?script_id=1939)を入れてgqを使うとそのように整形できる。(kaoriya版には同梱)  
@@ -29,12 +31,16 @@ Vim ドキュメント翻訳者の手引き
   ```vim
   " autofmtの設定例
   :set formatexpr=autofmt#japanese#formatexpr()  " kaoriya版では設定済み
-  ：let autofmt_allow_over_tw=1　　　　　　　　　　　　　　　　　" 全角文字がぶら下がりで1カラムはみ出すのを許可
+  :let autofmt_allow_over_tw=1                   " 全角文字がぶら下がりで1カラムはみ出すのを許可
   ```
-  はみ出た部分の色を変えるのもよい。
+  以下のいずれかで、はみ出た部分の色を変えるのもよい。
   ```vim
   :syn match Error /\%>79v.*/
   ```
+  ```vim
+  :set cc=+1
+  ```
+
 
 - 口調  
   ユーザーマニュアルは「です、ます」調に統一する。  
@@ -104,8 +110,11 @@ Vim ドキュメント翻訳者の手引き
   {Vi にはない}
 
 - {not available when compiled without the |+cindent| feature}  
-  {}
+  {only available when compiled with the |+multi_byte| feature}  
 
+  どちらも  
+  {Vimが |+xxxx| 機能付きでコンパイルされたときのみ有効}  
+  形式で統一。(`{Vim` で書き始めることで構文ハイライトされる。)
 - external command  
   `|:!|`で使用するような、`ls`や`cat`などいわゆる普通のプログラム  
   Vimのコマンドと特に区別して
@@ -118,7 +127,7 @@ Vim ドキュメント翻訳者の手引き
   構文ハイライト
 
 - Vim の表記  
-  一般名称として、ソフトウェア、エディタとしてのVimを指す時には「Vim」と書く。
+  一般名称として、ソフトウェア、エディタとしてのVimを指す時には「Vim」と書く。GUI版は「gVim」。  
   シェルなどで入力されるコマンドとしては「vim」もしくは「gvim」と書く。
 
 - ファイル、オプションその他の表記  
@@ -160,6 +169,7 @@ Insert mode                     挿入モード
     Virtual Replace mode        仮想置換モード
 Command-line mode               コマンドラインモード
 Ex mode                         Exモード
+Terminal-Job mode               端末ジョブモード
 ```
 
 意見
