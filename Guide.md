@@ -116,9 +116,12 @@ Vim ドキュメント翻訳者の手引き
 - {not available when compiled without the |+cindent| feature}  
   {only available when compiled with the |+multi_byte| feature}  
 
-  どちらも  
+  否定形・肯定形にかかわらず、どちらも  
   {Vimが |+xxxx| 機能付きでコンパイルされたときのみ有効}  
-  の形式で統一。(`{Vim` で書き始めることで構文ハイライトされる。)
+  の形式で統一。(`{Vim` で書き始めることで構文ハイライトされる。)  
+  あるいは、  
+  {|+xxxx| 機能付きでコンパイルされたときのみ有効}  
+  でもよい。(`{|+xxxx|` 形式で書き始めても構文ハイライトされる。)  
 
 - external command  
   `|:!|`で使用するような、`ls`や`cat`などいわゆる普通のプログラム  
