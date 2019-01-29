@@ -159,6 +159,7 @@ Vim ドキュメント翻訳者の手引き
 
 - forward/backward → 前方/後方 固定とする。
 - before/after → 前/後ろ (前方/後方 と訳さない)
+- quickfix/location → そのまま quickfix/location とする。 (クイックフィックス/ロケーション と訳さない)
 
 - モードの名称
 ```
