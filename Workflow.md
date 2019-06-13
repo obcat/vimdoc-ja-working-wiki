@@ -14,10 +14,18 @@
 
 ##  本リポジトリをクローンする
 
+### vimdoc-ja-working へのコミット権がある場合
+
 以下の手順で、本リポジトリをクローンできます。
 
     $ cd /path/to
     $ git clone git@github.com:vim-jp/vimdoc-ja-working.git
+
+
+### vimdoc-ja-working へのコミット権がない場合
+
+github での通常の作法と同様に、フォーク＆クローンした後、下記の要領で作業を行い、
+フォーク先のレポジトリへコミット&プッシュした後、PRを作成してください。
 
 
 ## master から作業ブランチを作成する
@@ -82,9 +90,3 @@ Vim のソースは https://github.com/vim/vim から取得できます。
     $ git push -u origin my-translation
 
 master へマージされると、通常は5分くらいで vimdoc-ja の Web と配布用ファイルへ反映されます。
-
-
-## vimdoc-ja-working へのコミット権がない場合
-
-github での通常の作法と同様に、フォークした後、上記の要領で作業を行い、
-フォーク先のレポジトリへコミット&プッシュした後、PRを作成してください。
