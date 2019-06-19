@@ -75,6 +75,7 @@ Vim のソースは https://github.com/vim/vim から取得できます。
 特に説明することはありません。
 以下の手順を参考にしてください。
 翻訳のお作法については [手引き](https://github.com/vim-jp/vimdoc-ja-working/wiki/Guide) を参照してください。
+特に、ヘルプ特有の構文を知らない方は `:help help-writing` を一読することをお勧めします。
 
     $ cd /path/to/vimdoc-ja-working
     $ vim doc/foo.jax
