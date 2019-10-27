@@ -123,7 +123,7 @@ Vim ドキュメント翻訳者の手引き
   {|+xxxx| 機能付きでコンパイルされたときのみ有効}  
   でもよい。(`{|+xxxx|` 形式で書き始めても構文ハイライトされる。)  
 
-- autocommand
+- autocommand  
   自動コマンド
 
 - external command  
