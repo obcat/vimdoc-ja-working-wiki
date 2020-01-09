@@ -33,10 +33,14 @@ Vim ドキュメント翻訳者の手引き
   [autofmt](https://github.com/vim-jp/autofmt)を入れてgqを使うとそのように整形できる。(kaoriya版には同梱)  
   (あるいは、[JpFormat.vim](https://sites.google.com/site/fudist/Home/jpformat))
   ```vim
-  " autofmtの設定例
+  " 整形用の設定例
   :set formatexpr=autofmt#japanese#formatexpr()  " kaoriya版では設定済み
   :let autofmt_allow_over_tw=1                   " 全角文字がぶら下がりで1カラムはみ出すのを許可
+  :set formatoptions+=mB     " または mM
+  :set smartindent
   ```
+  'formatoptions' には "mB" または "mM" を含めること。"mB" の場合は、行連結時にシングルバイト文字とマルチバイト文字の間に空白が入るが、"mM" の場合は空白は入らない。現時点ではシングルバイト文字とマルチバイト文字の間に空白を入れるかどうかは統一されていないため、整形時には周辺の文章に合わせて手動で調整が必要になる場合がある。
+
   以下のいずれかで、はみ出た部分の色を変えるのもよい。
   ```vim
   :syn match Error /\%>79v.*/
