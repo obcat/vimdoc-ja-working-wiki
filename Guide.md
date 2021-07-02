@@ -156,6 +156,8 @@ Vim ドキュメント翻訳者の手引き
   `{}` 波カッコ  
   `<>` 折カッコ  
   漢字と記号がわかれば、どれがどれだかハッキリわかる
+  メモ:
+    - 現状では「括弧」も多い。文字数少ないし「括弧」のほうが良いのでは?
 
 - dot (`.`)  
   ドット
@@ -189,6 +191,8 @@ Vim ドキュメント翻訳者の手引き
   シンタックスハイライティング  
   シンタックス強調表示  
   構文ハイライト
+  メモ:
+    - 現状では構文{強調表示,ハイライト}が多い
 
 - Vim の表記  
   一般名称として、ソフトウェア、エディタとしてのVimを指す時には「Vim」と書く。GUI版は「gVim」。  
@@ -248,10 +252,6 @@ Terminal-Job mode               端末ジョブモード
 Ex コマンドやオプションに使われるような単語はそのままカタカナにしたほうが分かりやすいのではないか?  
 ただしカタカナばかりでは読みにくい分かりにくい
 
-モードの名前は漢字かカタカナか統一したほうがいいと思う  
-思い切って Normal モードとか Insert モードとかでもいい気がする  
-→上記のように統一しました。
-
 コマンドラインはVimのコマンドラインとシェルのコマンドラインで紛らわしい  
 まぁ分かるか
 
@@ -264,9 +264,6 @@ Ex コマンドやオプションに使われるような単語はそのまま�
 
 辞書.辞典.翻訳.語学検索：翻訳のためのインターネットリソース
   http://www.kotoba.ne.jp/
-
-IBM 情報処理用語英和対訳集
-  http://www-6.ibm.com/jp/manuals/nlsdic/nlsdic.html (サービス終了)
 
 Excite エキサイト 翻訳 (機械翻訳)
   http://www.excite.co.jp/world/english/
@@ -283,11 +280,11 @@ JF で翻訳できるぞ mini HOWTO
 JM Project
   http://linuxjm.sourceforge.jp/
 
-JM 翻訳作業の手引き
-  http://linuxjm.sourceforge.jp/guidance/index.html
+JM Project ガイド
+  http://linuxjm.osdn.jp/guide/
 
 翻訳の指針
-  http://linuxjm.sourceforge.jp/guidance/translation_note.html
+  http://linuxjm.osdn.jp/guide/translation_guideline.html
 
 Japanese Manual Project for FreeBSD
   http://www.jp.freebsd.org/man-jp/
@@ -308,7 +305,7 @@ WIDE IPv6 WG による訳語集
   http://www.v6.wide.ad.jp/Documents/glossary.txt
 
 FreeBSD Security Advisory 翻訳メモ
-  http://home.jp.freebsd.org/%7Ehrs/doc-jp/freebsd-sa.txt
+  https://www.allbsd.org/~hrs/FreeBSD/doc-jp/announce-jp/FreeBSD-SA/freebsd-sa.txt
 
 X Japanese Documentation Project
   http://xjman.dsl.gr.jp/
@@ -325,14 +322,8 @@ Xlib - C Language X Interface
 用語集
   http://xjman.dsl.gr.jp/X11R6/X11/glossary.html
 
-Mozilla Japan 翻訳部門
-  http://www.mozilla-japan.org/jp/td/
-
-参考資料
-  http://www.mozilla-japan.org/jp/td/links.html
-
 Pythonドキュメント翻訳プロジェクト
-  http://code.google.com/p/python-doc-ja/
+  https://github.com/python-doc-ja/python-doc-ja/wiki
 
 翻訳通信
   http://www.honyaku-tsushin.net/
@@ -341,7 +332,7 @@ Pythonドキュメント翻訳プロジェクト
   http://www.honyaku-tsushin.net/bn/200209SAp2.pdf
 
 日本語組版処理の要件（日本語版）
-  http://www.w3.org/TR/jlreq/ja/
+  https://www.w3.org/TR/jlreq/
 
 ツール
 -----
