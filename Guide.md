@@ -193,6 +193,87 @@ ASCII 文字は半角文字を使う。カタカナは全角文字を使う。
 ```
 
 
+## `<` の conceal に注意
+
+思いがけず行頭の `<` が conceal されてしまうことがある。例:
+
+原文
+```help
+For example: >
+	noremap x <Cmd>echo mode(1)<CR>
+Unlike <expr> mappings, ...
+```
+
+日本語訳
+```help
+例えば: >
+	noremap x <Cmd>echo mode(1)<CR>
+<expr> マッピングとは異なり、...
+```
+
+conceal後
+```
+例えば:
+	noremap x <Cmd>echo mode(1)<CR>
+expr> マッピングとは異なり、...
+```
+
+`<expr>` の `<` がコードブロックの終わりのキーワードと認識され、conceal されてしまった!
+
+これを回避するには、たんに語順を変更して `<` が行頭にこないようにすればよい:
+
+```help
+例えば: >
+	noremap x <Cmd>echo mode(1)<CR>
+...。 これは <expr> マッピングとは異なる。
+```
+
+```
+例えば:
+	noremap x <Cmd>echo mode(1)<CR>
+...。 これは <expr> マッピングとは異なる。
+```
+
+語順を変更できない/したくない場合は、`<` を二重にする:
+
+```help
+例えば: >
+	noremap x <Cmd>echo mode(1)<CR>
+<<expr> マッピングとは異なり、...
+```
+
+```
+例えば:
+	noremap x <Cmd>echo mode(1)<CR>
+<expr> マッピングとは異なり、...
+```
+
+注意: コードブロックの後ろが空行の場合も、空行に `<` を追加するのではなく `<` を二重にする:
+
+```help
+For example: >
+	noremap x <Cmd>echo mode(1)<CR>
+
+Unlike <expr> mappings, ...
+```
+
+```help
+例えば: >
+	noremap x <Cmd>echo mode(1)<CR>
+
+<<expr> マッピングとは異なり、...
+```
+
+```
+例えば:
+	noremap x <Cmd>echo mode(1)<CR>
+
+<expr> マッピングとは異なり、...
+```
+
+理由: 原文に更新があって `<` 始まりでなくなったとき、余計な `<` を消す必要があるが、`<` を空行、つまり更新箇所と別の行に追加していた場合、`<` の存在に気づけず消し忘れる可能性がある。一方で二重 (`<<`) になっていれば存在に気づきやすい。
+
+
 ## 推奨設定
 
 ヘルプを書くのに便利な設定がいくつかある。
@@ -205,8 +286,6 @@ ASCII 文字は半角文字を使う。カタカナは全角文字を使う。
 setlocal conceallevel=0
 highlight Ignore ctermfg=red
 ```
-
-コードブロックの直後の本文が `<` で始まってしまう場合は、語順を変えるか `<` を二重にして conceal されないようにすること。
 
 
 ### autofmt プラグイン
